@@ -1,0 +1,134 @@
+* {
+    border: none;
+    border-radius: 4px;
+    font-family: Carmen Sans; /*Zain ,*/
+    color: #F7F1F3;
+    font-size: 11px;
+    font-weight: 800;
+    min-height: 12px;
+    margin-left: 3px;
+    margin-right: 3px;
+   }
+
+*:hover {
+    color: rgba(112,162,205, 1);
+}
+
+#clock:hover, #cpu:hover, #temperature:hover, #memory:hover {
+    
+    color:#ffffff;
+}
+
+tooltip {
+  background: #203756;
+  border: 2px solid #5792C4;
+}
+tooltip label {
+  color: white;
+}
+
+
+window#waybar {
+    background-color: #203756;
+}
+
+/*#workspaces * {*/
+/*    font-size: 11px;*/
+/*    font-weight: 800;*/
+/*}*/
+
+#workspaces {
+    background-color: rgba(113, 82, 85, 1);
+    border-radius: 14px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /*background: transparent;*/
+    /*box-shadow: none;*/
+    /*text-shadow: none;*/
+    /*border-radius: 14px;*/
+
+    /*margin-top: 4px;*/
+    /*margin-bottom: 4px;*/
+    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: transparent;
+    border-radius: 14px;
+    padding-left: 6px;
+    padding-right: 6px;
+    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+  }
+
+#workspaces button.active {
+    background-color: #7b3854;
+    border-bottom: 2px solid #db9e6f;
+    border-radius: 14px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#clock {
+    background-color: rgba(87, 146, 196, 1);
+    border-radius: 4px 14px 14px 4px;
+    padding: 0px 8px 0px 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: -2px;
+
+}
+
+#hardware {
+    font-weight: bold;
+    background-color: rgba(87, 146, 196, 1);
+    border-radius: 16px 4px 4px 14px;
+    padding: 0px 8px 0px 8px; /* 20px padding-left is necessary to create uniform left/right edges */
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#custom-logo {
+    background-image: url("./img/Confetto.png");
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 35px;
+    /*padding-top: 7px;*/
+    /*padding-bottom:7px;*/
+}
+
+#custom-colorpicker {
+    font-size: 14px;
+}
+
+#custom-screenshot {
+    font-size: 14px;
+}
+
+/*#custom-postmark {*/
+/*    padding-left: 5px;*/
+/*    padding-right: 9px;*/
+/*    font-family: "Playwrite AR", cursive;*/
+/*    font-weight: 900;*/
+/*    font-size: 16px;*/
+/**/
+/*}*/
+
+#custom-breakl {
+    font-size: 10px;
+    background-color: #db9e6f;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+  

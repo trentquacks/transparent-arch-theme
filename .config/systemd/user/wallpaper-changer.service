@@ -1,0 +1,7 @@
+[Unit]
+Description="Change wallpaper based on indicated time by systemd timer"
+
+[Service]
+Type=oneshot
+ExecStart=/home/%u/bin/wallpaper-changer.sh 1
+Restart=on-failure

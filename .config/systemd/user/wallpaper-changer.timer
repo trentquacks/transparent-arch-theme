@@ -1,0 +1,11 @@
+[Unit]
+Description="Runs wallpaper-changer.service on boot or during specified day or night time"
+
+[Timer]
+Unit=wallpaper-changer.service
+OnCalendar=*-*-* 18:00:00
+OnCalendar=*-*-* 6:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

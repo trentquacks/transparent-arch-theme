@@ -1,0 +1,159 @@
+@
+
+*{font-family: "Space Mono" !important;}
+
+:root {
+    --dark-transparent: rgba(0,0,0,.85);
+
+    --WindowDraggingFromNewtabButton: drag !important;
+    --tab-border-radius: 6px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 3px  */
+    --NavbarWidth: 43; /*  Default values: 36 - 43  */
+    --TabsHeight: 36; /*  Minimum: 30  *//*  Default: 36  */
+    --TabsBorder: 8; /*  Doesnt do anything on small layout  *//*  Default: 8  */
+    --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder));  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */
+
+    /* 🎯 Core Transparency */
+    --tabpanel-background-color: var(--dark-transparent) !important;
+    /* --chrome-content-separator-color: transparent !important; */
+    --toolbar-bgcolor: transparent !important;
+    /* --in-content-page-background: transparent !important; */
+    /* --in-content-box-background: transparent !important; */
+}
+
+ /*  Only the tabs space will grow from here  */
+@media screen and (min-width:1325px) {
+    #nav-bar {
+        margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important;
+        height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px);
+        margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important;
+        vertical-align: center !important} #urlbar-container{min-width: 0px !important;
+        flex: auto !important;
+    }
+    #TabsToolbar {
+        margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important
+    }
+    toolbarspring {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width:850px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
+{#nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+
+/*  The window is not enough wide for a one line layout  */
+@media screen and (max-width:849px) {
+    #nav-bar {
+        padding: 0 5px 0 5px!important;
+        height: calc(var(--NavbarHeightSmall) * 1px) !important
+    } 
+    toolbarspring {
+        display: none !important;
+    } 
+    #TabsToolbar, #nav-bar {
+        transition: margin-top .25s !important
+    }
+}
+
+#nav-bar, #PersonalToolbar {
+    background-color: #0000 !important; 
+    background-image: none !important;
+    box-shadow: none !important
+}
+#nav-bar {
+    margin-left: 3px; border-top: none !important
+}
+.tab-background, .tab-stack {
+    min-height: calc(var(--TabsHeight) * 1px) !important
+}
+
+/*  Removes rounding from the top corners,   */
+#navigator-toolbox { 
+    appearance: none !important;
+    border-radius: 0 !important;
+    background: var(--dark-transparent) !important;
+}
+#navigator-toolbox-background{background-color: Field !important; background-image: none !important;  appearance: none !important; border-radius: 0 !important}
+#navigator-toolbox-background:-moz-window-inactive{filter: contrast(90%);}  /*  Fades window while not in focus */
+#urlbar-background{border: none !important; outline: none !important; transition: .15s !important;}
+
+/*  Removes space after pinned tabs  */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {margin-inline-start: 0!important}
+
+/*  X-button on the tabs  */
+.tabbrowser-tab:not(:hover) .tab-close-button{opacity: 0% !important; transition: .3s !important; display: -moz-box !important;}
+.tab-close-button[selected]:not(:hover){opacity: 45% !important; transition: .3s !important; display: -moz-box !important;}
+.tabbrowser-tab:hover .tab-close-button{opacity: 50%; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
+.tab-close-button:hover{opacity: 100% !important; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
+.tab-close-button[selected]:hover{opacity: 100% !important; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
+
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
+	/* show close button even when tabs are low on width */
+	display: block !important;
+}
+
+/*  Removes annoying border  */
+#navigator-toolbox{border:none !important;}
+
+/*  Titlebar button fix#6322  */
+.titlebar-buttonbox-container{-moz-box-ordinal-group: auto;}
+.titlebar-button > .toolbarbutton-icon:-moz-lwtheme{-moz-context-properties: fill, stroke !important;}
+.titlebar-button > .toolbarbutton-icon {display: flex !important; height:unset !important; width: unset !important; appearance: -moz-window-decorations !important;}
+.titlebar-buttonbox{appearance: none !important}
+#titlebar .toolbarbutton-icon{-moz-context-properties: revert !important}
+.toolbarbutton-icon{-moz-context-properties: fill, stroke !important}
+.titlebar-button::before{content: none !important}
+
+/*  Removes the background from the urlbar while not in use  */
+#urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background {box-shadow: none!important; background: #0000 !important}
+
+/*  Urlbar popup thing  */
+.urlbarView-row{display: none !important}
+.urlbarView-row:nth-child(1), .urlbarView-row:nth-child(2){display: flex !important}
+#urlbar-anon-search-settings{margin-inline-start: 0px !important}
+
+/*  Makes the space between the reload button and the urlbar less akwardly large  */
+#urlbar-container{margin-left: 1px !important}
+#appMenu-fxa-separator{border-image:none !important;}
+
+/*  Navbar buttons order  */
+#PanelUI-button, #wrapper-PanelUI-button{order: -2 !important}
+#nav-bar-overflow-button{order: -1 !important}
+#PanelUI-menu-button, #unified-extensions-button, #downloads-button{direction: rtl;}
+#back-button{padding-right: 2px !important} #forward-button{padding-right: 8px !important}  /*  Fix buttons padding  */
+
+/*  Rounded corner in pages  *//*  layout.css.has-selector.enabled  */
+#main-window:has(#navigator-toolbox[style=""]) #tabbrowser-tabpanels, :not([sizemode="fullseen"]) #tabbrowser-tabpanels{margin: -10px 0 0 0!important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;}
+#main-window:has(#navigator-toolbox[style=""]) .browserStack>browser, :not([sizemode="fullscreen"]) .browserStack>browser{border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;}
+#navigator-toolbox{padding-bottom: 0px; margin-bottom: 10px;}
+[inFullscreen] #navigator-toolbox{padding-bottom: 10px; margin-bottom: 0px;}
+[inFullscreen] #tabbrowser-tabpanels, [inFullscreen] .browserStack>browser{border-radius: 0 !important; margin: 0 !important; transition: border-radius .7s !important}
+.browserStack{margin-top: 0px !important; border-radius: 0px !important; z-index: 2;}
+#sidebar-box{margin-top: -10px !important; border-radius: 0 10px 0 0!important; z-index: 1} */
+
+/*  Drop menus  */
+[position="bottomright topright"]{--panel-border-radius: 0 5px 5px 5px!important}
+[position="bottomleft topleft"]{--panel-border-radius: 5px 0 5px 5px!important}
+[part="content"]{border: none !important;}
+.toolbarbutton-1[open]{--toolbarbutton-border-radius: 4px 4px 0 0!important;}
+[class*="identity-color"] > * > * .tab-context-line{border-radius: 0 0 5px 5px !important}  /*  Identity-color  */
+
+/* this one changes active tab color! */
+.tabbrowser-tab > .tab-stack > .tab-background{
+    background-color: rgba(25,25,25, .5) !important;
+}
+/* this one changes non active tab color! */
+.tabbrowser-tab > .tab-stack > .tab-background:not([selected]){
+    background-color: rgba(0,0,0, .1) !important;
+}
+
+#urlbar-input-container:focus-within {
+    background-color: rgba(0,0,0, .15) !important; 
+}
+
+.menupopup-arrowscrollbox {  
+     border: 0  !important;
+}
+
+
+
+

@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# A script that changes wallpaper based on time (and randomly)!!!
+user=$(whoami)
+wp_dir=$HOME/Desktop/Wallpaper
+
+day_wallpaper=(
+    "$wp_dir/magicday.png"
+    "$wp_dir/kita.png"
+    "$wp_dir/beach.png"
+    "$wp_dir/bocchi.jpg"
+    "$wp_dir/laundry.png"
+    "$wp_dir/sky.jpg"
+)
+
+night_wallpaper=(
+    "$wp_dir/magicnight.png"
+    "$wp_dir/cozy.jpg"
+    "$wp_dir/city.png"
+)
+
+hour=$(date +"%H")
+current_wallpaper=$(swww query | grep -oP '/home/$user/Desktop/Wallpaper\S+\.(jpg|png|jpeg|webp)' | head -1)
+echo "$current_wallpaper"
+
+if [ $hour -lt 18 -a $hour -gt 5 ]; then
+    day_num=$[ $RANDOM % ${#day_wallpaper[@]} ]
+    selected_wallpaper=${day_wallpaper[day_num]}
+else
+    night_num=$[ $RANDOM % ${#night_wallpaper[@]} ]
+    selected_wallpaper=${night_wallpaper[night_num]}
+fi
+
+# Update Wallpaper
+swww img "$selected_wallpaper" --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 --transition-fps 120 
+
+# Update hyprlock
+conf="$HOME/.config/hypr/hyprlock.conf"
+sed -i "/^background {/,/^}/{s|^[[:space:]]*path =.*|    path = $selected_wallpaper|}" "$conf"
+
+# Get file depth for info.. (wehe)
+file_depth=$(echo $selected_wallpaper | grep -o / | wc -l)
+((file_depth += 1))
+
+# Notifier
+urwallpaper=$(echo "$selected_wallpaper loaded :3" | cut -d'/' -f $file_depth)
+echo $urwallpaper
+notify-send "wallpaper changed!" "$urwallpaper"

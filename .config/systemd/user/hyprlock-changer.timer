@@ -1,0 +1,11 @@
+[Unit]
+Description="Runs hyprlock-changer.service on boot or during specified day or night time"
+Requires=hyprlock-changer.service
+
+[Timer]
+OnCalendar=*-*-* 18:00:00
+OnCalendar=*-*-* 6:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,56 @@
+
+@define-color sapphire #5FAFFF;
+
+* {
+    border: none;
+    border-radius: 0px;
+    color: rgba(255,255,255,.85);
+
+
+    /* i dont know what font the japanese numbers uses lmfaoo */
+    font-family: "Space Mono"; 
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+*:hover {
+    color: @sapphire;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.85);
+}
+
+#workspaces button {
+    border: 2px solid rgba(0,0,0,0);
+}
+
+#workspaces button.active {
+    border: 2px solid @sapphire;
+}
+
+#custom-breakl, #custom-breakr {
+    margin-left: 12px;
+    margin-right: 12px;
+    opacity: 0.6;
+}
+
+#custom-hani {
+    margin-left: 0px;
+    margin-right: 8px;
+    font-size: 8px;
+}
+
+#custom-magicl {
+    margin-left: 8px;
+}
+
+#hyprland-workspaces {
+    font-size: 18px;
+}
+

@@ -1,0 +1,7 @@
+[Unit]
+Description="Change hyprlock conf based on indicated time by systemd timer"
+
+[Service]
+Type=oneshot
+ExecStart=/home/%u/bin/hyprlock-changer.sh
+Restart=on-failure
