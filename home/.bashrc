@@ -31,9 +31,9 @@ PS1='\W \[\e[38;5;75m\] \[\e[0m\]'
 
 # Set some env variables
 export EDITOR=nvim
-export PATH=$PATH:/var/lib/flatpak/exports/bin
+# export PATH=$PATH:/var/lib/flatpak/exports/bin
 # export PATH=$PATH:/var/lib/flatpak/exports/share/applications
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications
+# export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications
 
 #
 /home/wuki/bin/random_chafa.sh
