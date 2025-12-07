@@ -74,7 +74,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig').basedpyright.setup({
+vim.lsp.config('basedpyright', {
   settings = {
     basedpyright = {
       analysis = {
@@ -84,17 +84,17 @@ require('lspconfig').basedpyright.setup({
         -- capabilities = capabilities,
         -- useLibraryCodeForTypes = true,
         -- diagnosticSeverityOverrides = {
-        --   autoSearchPaths = true,
-        --   enableTypeIgnoreComments = false,
-        --   reportGeneralTypeIssues = 'none',
-        --   reportArgumentType = 'none',
-        --   reportUnknownMemberType = 'none',
-        --   reportAssignmentType = 'none',
-        -- },
+          --   autoSearchPaths = true,
+          --   enableTypeIgnoreComments = false,
+          --   reportGeneralTypeIssues = 'none',
+          --   reportArgumentType = 'none',
+          --   reportUnknownMemberType = 'none',
+          --   reportAssignmentType = 'none',
+          -- },
+        },
       },
     },
-  },
-})
+  })
 
 
 

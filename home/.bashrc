@@ -20,7 +20,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias bonsai='cbonsai --color=255,255,75,24 --time=0.08  -l -i'
 awake=$(awk '{print int($1/3600) "h "int(($1%3600)/60) "m "int($1%60) "s", endl=""}' /proc/uptime)
-daytoday=$(date | awk '{print substr($1, 0, length($1)-1)}')
+daytoday=$(date | awk '{print substr($1, 0, length($1))}')
 
 # bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'

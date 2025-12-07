@@ -11,24 +11,14 @@ fi
 wp_dir=$HOME/Desktop/Wallpaper
 
 day_wallpaper=(
-    "$wp_dir/magicday.png"
-    "$wp_dir/kita.png"
-    "$wp_dir/beach.png"
-    "$wp_dir/bocchi.jpg"
-    "$wp_dir/laundry.png"
-    "$wp_dir/sky.jpg"
-    "$wp_dir/eyes.jpg"
-    "$wp_dir/river.png"
-    "$wp_dir/peak.jpg"
-    "$wp_dir/vegie.jpg"
+    "$wp_dir/ryo.jpg"
+    "$wp_dir/bocchi.png"
+    "$wp_dir/nijika.jpeg"
+    "$wp_dir/kita.jpeg"
 )
 
 night_wallpaper=(
-    "$wp_dir/magicnight.png"
-    "$wp_dir/cozy.jpg"
-    "$wp_dir/city.png"
-    "$wp_dir/tree.jpg"
-    "$wp_dir/night.jpg"
+    "$wp_dir/ryo_n.png"
 )
 
 hour=$(date +"%H")
@@ -57,7 +47,7 @@ selected_wallpaper=${time_wallpaper[wallpaper_index]}
 swww img "$selected_wallpaper" --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 --transition-fps 120 
 
 # Update hyprlock
-conf="$HOME/.config/hypr/hyprlock.conf"
+conf="$HOME/transparent-arch-theme/.config/hypr/hyprlock.conf"
 sed -i "/^background {/,/^}/{s|^[[:space:]]*path =.*|    path = $selected_wallpaper|}" "$conf"
 
 # Get file depth for info.. (wehe)
