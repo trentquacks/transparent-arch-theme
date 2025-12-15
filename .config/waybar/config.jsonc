@@ -154,11 +154,12 @@
         },
         "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% {icon} ",
+        "format-plugged": "",
         "format-full": "{capacity}% 󰂄 ",
         "format-icons": {
             "discharging": ["󰁺", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁","󰂂", "󰁹"],
             "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉","󰢞", "󰂊", "󰂋", "󰂄"],
-            // "plugged": "a"
+            "plugged": "󰎇"
         }
     },
 
