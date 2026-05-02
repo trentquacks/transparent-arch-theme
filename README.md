@@ -14,7 +14,7 @@ git clone https://github.com/perlastrent123/transparent-arch-theme.git
 
 # Packages
 ```bash
-7zip basedpyright bibata-cursor-theme-bin bluez bluez-utils cbonsai-git clipse cmatrix dunst fastfetch fcitx5-configtool fcitx5-mozc firefox hypridle hyprlock hyprpicker hyprpolkitagent hyprshot hyprsunset inotify-tools jp2a kitty mpv nemo-fileroller neovim networkmanager nsxiv pavucontrol pipewire-alsa pipewire-pulse qt5-wayland stow swww tofi ttf-material-design-icons-extended vim waybar xdg-desktop-portal-hyprland xdg-terminal-exec xorg-xrdb xwaylandvideobridge yay yazi ttf-space-mono-nerd chafa
+7zip basedpyright bibata-cursor-theme-bin bluez bluez-utils cbonsai-git clipse cmatrix dunst fastfetch fcitx5-configtool fcitx5-mozc firefox hypridle hyprlock hyprpicker hyprpolkitagent hyprshot hyprsunset inotify-tools jp2a kitty mpv nemo-fileroller neovim networkmanager nsxiv pavucontrol pipewire-alsa pipewire-pulse qt5-wayland stow awww tofi ttf-material-design-icons-extended vim waybar xdg-desktop-portal-hyprland xdg-terminal-exec xorg-xrdb xwaylandvideobridge yay yazi ttf-space-mono-nerd chafa qview wayle
 ```
 
 # Themed Apps

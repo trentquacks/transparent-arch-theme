@@ -4,7 +4,7 @@
 * {
     border: none;
     border-radius: 0px;
-    color: rgba(255,255,255,.85);
+    color: rgba(255,255,255,1);
 
 
     /* i dont know what font the japanese numbers uses lmfaoo */
@@ -23,7 +23,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0,0,0,0.90);
 }
 
 #workspaces button {
@@ -37,7 +37,7 @@ window#waybar {
 #custom-breakl, #custom-breakr {
     margin-left: 12px;
     margin-right: 12px;
-    opacity: 0.6;
+    opacity: 0.15;
 }
 
 #custom-hani {

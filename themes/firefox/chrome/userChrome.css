@@ -1,9 +1,9 @@
-@
 
-*{font-family: "Space Mono" !important;}
+*{font-family: "Adwaita Sans" !important;}
 
 :root {
-    --dark-transparent: rgba(0,0,0,.85);
+
+    --dark-transparent: rgba(0,0,0, 0);
 
     --WindowDraggingFromNewtabButton: drag !important;
     --tab-border-radius: 6px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 3px  */
@@ -72,7 +72,7 @@
     border-radius: 0 !important;
     background: var(--dark-transparent) !important;
 }
-#navigator-toolbox-background{background-color: Field !important; background-image: none !important;  appearance: none !important; border-radius: 0 !important}
+#navigator-toolbox-background{background-color: transparent !important; background-image: none !important;  appearance: none !important; border-radius: 0 !important}
 #navigator-toolbox-background:-moz-window-inactive{filter: contrast(90%);}  /*  Fades window while not in focus */
 #urlbar-background{border: none !important; outline: none !important; transition: .15s !important;}
 
@@ -154,6 +154,71 @@
      border: 0  !important;
 }
 
+#urlbar-searchmode-switcher {
+    background-color: transparent !important;
+}
 
+:root {
+  --toolbar-field-background-color: transparent !important;
+  --toolbar-field-focus-background-color: transparent !important;
+  --toolbarbutton-outline: none !important;
+  --toolbar-field-border-color: transparent !important;
+  --toolbar-field-focus-border-color: transparent !important;
 
+}
 
+#urlbar{
+  border-color: var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25)) !important;
+  --autocomplete-popup-highlight-background: transparent;
+}
+
+#titlebar-min, #titlebar-max, #titlebar-close {
+    color: #0e0e0e !important;
+}
+
+#urlbar[open] > #urlbar-background { border-color: transparent !important; }
+
+#urlbar[focused] {
+    border: 1px solid transparent !important;
+}
+
+ #urlbar:focus {
+      border: 1px solid transparent !important;
+ }
+
+ #urlbar-background{
+   outline: none !important;
+}
+
+/* Hide ONLY the top "Visit" or "Search with" default action row */
+#urlbar-results .urlbarView-row:first-child {
+  display: none !important;
+}
+/* Hide the entire URL bar dropdown/suggestions box */
+.urlbarView {
+  display: none !important;
+}
+
+/* 🎯 Fix for Wayland / Hyprland base layer transparency */
+:root {
+    --tabpanel-background-color: transparent !important;
+    background: transparent !important;
+}
+
+#main-window, 
+#browser, 
+#appcontent, 
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+.browserContainer,
+.browserStack {
+    background: transparent !important;
+    background-color: transparent !important;
+    appearance: none !important;
+}
+
+/* Forces the rendering layer to drop the fallback color */
+browser[type="content-primary"],
+browser[type="content"] {
+    background: transparent !important;
+}

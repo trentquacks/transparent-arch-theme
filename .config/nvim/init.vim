@@ -57,23 +57,52 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
-" Transparency
+"==================== CATPUCCINE ======================"
+"" Transparency
+"highlight Normal guibg=NONE ctermbg=NONE
+"highlight NonText guibg=NONE ctermbg=NONE
+"highlight EndOfBuffer guibg=NONE ctermbg=NONE
+"
+"" Winbar, Statusline, Tab Color
+"highlight WinBar guifg=#b4befe guibg=#07080D
+"highlight IsModified guifg=#FFFFFF guibg=#FF0000
+"highlight IsNotModified guifg=#FFFFFF guibg=#00FF00
+"
+"highlight StatusLineTerm ctermfg=white ctermbg=NONE guifg=#FFFFFF guibg=#1e1e2e
+"highlight StatusLine ctermfg=white ctermbg=NONE guifg=#a6adc8 guibg=#1e1e2e
+"highlight StatusLineNC guifg=#a6adc8 guibg=#1e1e2e
+"highlight TabLineSel guifg=#bac2de guibg=#45475a
+"highlight TabLine guifg=#a6adc8 guibg=#1e1e2e
+"highlight TabLineFill guifg=LightGreen guibg=#181825
+"
+"
+"" Syntax Color
+"highlight Comment guifg=#6c7086 ctermfg=NONE
+"highlight Function guifg=#74c7ec ctermfg=NONE
+"highlight String guifg=#a6e3a1 ctermfg=NONE
+"highlight Constant guifg=#fab387 ctermfg=NONE
+"highlight Statement guifg=#f5c2e7 ctermfg=NONE
+"highlight Type guifg=#94e2d5 ctermfg=NONE
+"highlight Identifier guifg=#94e2d5 ctermfg=NONE
+"highlight Operator guifg=#f5c2e7 ctermfg=NONE
+"==================== CATPUCCINE ======================"
+
+"==================== MONOCHROME ======================"
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
 highlight EndOfBuffer guibg=NONE ctermbg=NONE
 
 " Winbar, Statusline, Tab Color
-highlight WinBar guifg=#b4befe guibg=#07080D
-highlight IsModified guifg=#FFFFFF guibg=#FF0000
-highlight IsNotModified guifg=#FFFFFF guibg=#00FF00
+highlight WinBar guifg=white guibg=#080808
+highlight IsModified guifg=#FFFFFF guibg=#333333
+highlight IsNotModified guifg=#FFFFFF guibg=#1c1c1c
 
-highlight StatusLineTerm ctermfg=white ctermbg=NONE guifg=#FFFFFF guibg=#1e1e2e
-highlight StatusLine ctermfg=white ctermbg=NONE guifg=#a6adc8 guibg=#1e1e2e
-highlight StatusLineNC guifg=#a6adc8 guibg=#1e1e2e
-highlight TabLineSel guifg=#bac2de guibg=#45475a
-highlight TabLine guifg=#a6adc8 guibg=#1e1e2e
-highlight TabLineFill guifg=LightGreen guibg=#181825
-
+highlight StatusLineTerm ctermfg=white ctermbg=NONE guifg=#FFFFFF guibg=NONE
+highlight StatusLine ctermfg=white ctermbg=NONE guifg=white guibg=NONE
+highlight StatusLineNC guifg=white guibg=#121212
+highlight TabLineSel guifg=white guibg=#3a3a3a
+highlight TabLine guifg=#white guibg=#1c1c1c
+highlight TabLineFill guifg=LightGreen guibg=#121212
 
 " Syntax Color
 highlight Comment guifg=#6c7086 ctermfg=NONE
@@ -84,6 +113,7 @@ highlight Statement guifg=#f5c2e7 ctermfg=NONE
 highlight Type guifg=#94e2d5 ctermfg=NONE
 highlight Identifier guifg=#94e2d5 ctermfg=NONE
 highlight Operator guifg=#f5c2e7 ctermfg=NONE
+"==================== MONOCHROME ======================"
 
 let mapleader = ","
 
@@ -111,3 +141,10 @@ vnoremap <leader>P "+P
 nnoremap <leader>t :botright new \| resize 10 \| terminal<CR>i
 tnoremap <Esc> <C-\><C-n>
 
+" Switch tab
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
+
+" Move tab
+nnoremap <leader>> :tabm +1<CR>
+nnoremap <leader>< :tabm -1<CR>

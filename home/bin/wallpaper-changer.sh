@@ -10,27 +10,28 @@ fi
 
 wp_dir=$HOME/Desktop/Wallpaper
 
-day_wallpaper=(
-    "$wp_dir/ryo.jpg"
-    "$wp_dir/bocchi.png"
-    "$wp_dir/nijika.jpeg"
-    "$wp_dir/kita.jpeg"
-)
+day_wallpaper=()
+night_wallpaper=()
 
-night_wallpaper=(
-    "$wp_dir/ryo_n.png"
-)
+for item in $wp_dir/day/*; do
+    day_wallpaper+=("$item")
+done
+    
+for item in $wp_dir/night/*; do
+    night_wallpaper+=("$item")
+done
 
 hour=$(date +"%H")
-current_wallpaper=$(swww query | grep -oP "$wp_dir\S+\.(jpg|png|jpeg|webp)" | head -1)
-
 
 if [ $hour -lt 18 -a $hour -gt 5 ]; then
     declare -n time_wallpaper=day_wallpaper
+    wp_dir="$wp_dir/day"
 else
     declare -n time_wallpaper=night_wallpaper
+    wp_dir="$wp_dir/night"
 fi
 
+current_wallpaper=$(awww query | grep -oP "$wp_dir\S+\.(jpg|png|jpeg|webp)" | head -1)
 
 for i in "${!time_wallpaper[@]}"; do
     if [[ "${time_wallpaper[$i]}" = "$current_wallpaper" ]]; then
@@ -44,10 +45,10 @@ done
 selected_wallpaper=${time_wallpaper[wallpaper_index]}
 
 # Update Wallpaper
-swww img "$selected_wallpaper" --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 --transition-fps 120 
+awww img "$selected_wallpaper" --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 --transition-fps 80 
 
 # Update hyprlock
-conf="$HOME/transparent-arch-theme/.config/hypr/hyprlock.conf"
+conf="$HOME/dotfiles/.config/hypr/hyprlock.conf"
 sed -i "/^background {/,/^}/{s|^[[:space:]]*path =.*|    path = $selected_wallpaper|}" "$conf"
 
 # Get file depth for info.. (wehe)

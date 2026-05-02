@@ -1,12 +1,12 @@
 width = 100%
 selection-color = #5FAFFF
-text-color = #ffffffd9
+text-color = #ffffff
 height = 100%
 border-width = 0
 outline-width = 0
-padding-left = 35%
-padding-top = 30%
+padding-left = 38%
+padding-top = 34%
 result-spacing = 25
 num-results = 5
 font = Space Mono
-background-color = #000000d9
+background-color = #000000e6

@@ -17,8 +17,9 @@
 
     "modules-left": [
         "group/confetto",
-        "custom/breakl",
+        // "custom/breakl",
         "hyprland/workspaces",
+        "custom/magicr",
         "custom/breakl",
         "custom/colorpicker",
         "custom/screenshot",
@@ -38,8 +39,8 @@
         "custom/breakr",
         "network",
         "custom/breakr",
-        "group/hardware",
-        "custom/breakr",
+        // "group/hardware",
+        // "custom/breakr",
         "clock",
         "custom/hani"
     ],
@@ -57,9 +58,9 @@
    "group/confetto": {
 		"orientation": "horizontal",
 		"modules": [
-			"custom/magicl",
-			"image#confetto",
-			"custom/magicr"
+			"custom/magicl"
+			// "image#confetto",
+			// "custom/magicr"
 		]
 	},
 
@@ -93,9 +94,7 @@
         "persistent-workspaces": {
             "1": [],
             "2": [],
-            "3": [],
-            "4": [],
-            "5": []
+            "3": []
         }
       
     },
@@ -112,7 +111,7 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "activated": "󰈈",
+            "activated": "󰈈 ",
             "deactivated": "󱲣"
         }
     },
@@ -137,7 +136,7 @@
 
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C {icon} ",
         "format": "{temperatureC}°C {icon} ",
@@ -165,11 +164,12 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "Wi-Fi ({signalStrength}%) 󰖩 ",
-        "format-ethernet": "{bandwidthUpBits} 󰈀",
+        "format-wifi": "󰖩 ",
+        // "format-ethernet": "{bandwidthUpBits} 󰈀 ",
+        "format-ethernet": "󰈀 ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Not Connected 󱳑",
+        "format-disconnected": "󱳑",
         "tooltip": false,
         "on-click": "exec kitty nmtui"
         // "format-alt": "{bandwidthUpBits} 󰛶 {bandwidthDownBits} 󰛴",
@@ -261,5 +261,5 @@
         "on-click-right": "exec $HOME/bin/wallpaper-changer.sh -1; notify-send a",
         "on-click-middle": "exec $HOME/bin/wallpaper-changer.sh $RANDOM; notify-send a",
         "tooltip": false
-    },
+    }
 }

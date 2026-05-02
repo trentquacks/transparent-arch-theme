@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (260, 260)
+    width = (260, 300)
 
     # The maximum height of a single notification, excluding the frame.
     height = (60, 60)
@@ -334,14 +334,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#000000d9"
+    background = "#000000e6"
     foreground = "#ffffff"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     default_icon = $HOME/.config/dunst/img/bell.svg
 
 [urgency_normal]
-    background = "#000000d9"
+    background = "#000000e6"
     foreground = "#ffffff"
     timeout = 5
     override_pause_level = 30
@@ -349,7 +349,7 @@
     default_icon = $HOME/.config/dunst/img/bell.svg
 
 [urgency_critical]
-    background = "#000000d9"
+    background = "#000000e6"
     foreground = "#ffffff"
     # frame_color = "#ff0000"
     timeout = 0

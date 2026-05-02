@@ -3,9 +3,9 @@
 status=$(fcitx5-remote)
 
 if [ $status -eq 2 ]; then
-  echo "Mozc (JP)"
+  echo "JP"
 elif [ $status -eq 1 ]; then
-  echo "English (US)"
+  echo "EN"
 else
   echo "N/A"
 fi

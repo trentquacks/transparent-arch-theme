@@ -24,6 +24,8 @@ daytoday=$(date | awk '{print substr($1, 0, length($1))}')
 
 # bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
+bind '"\e[Z": menu-complete-backward'
+
 
 #Change display name in terminal
 PS1='\W \[\e[38;5;75m\] \[\e[0m\]'
