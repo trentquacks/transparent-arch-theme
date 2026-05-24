@@ -464,3 +464,51 @@ body:has(#lyrics-fullscreen-container) > #main > .Root {
   height: 90vh;
   background-color: transparent;
 }
+
+/* --- Aggressive Flat Top Navigation & Header --- */
+
+/* 1. Flatten the Top Bar itself */
+.main-topBar-background {
+    background-color: var(--spice-main) !important;
+}
+.main-topBar-overlay {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 2. Force the Search Bar to be flat */
+.main-topBar-topbarContent form,
+.main-topBar-topbarContent form input,
+.x-searchInput-searchInput,
+.x-searchInput-searchInputInput {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 3. Force the Home, Marketplace, and other top buttons to be flat */
+#main .main-topBar-topbarContent button,
+.main-topBar-topbarContent .main-topBar-button,
+.main-topBar-topbarContent button[data-testid="home-button"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 4. Flatten the User/Profile Widget */
+.main-userWidget-box {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 5. Optional: Add a subtle hover state so you can tell they are clickable */
+#main .main-topBar-topbarContent button:hover,
+.main-topBar-topbarContent form:hover,
+.main-userWidget-box:hover {
+    background: var(--spice-card) !important;
+    background-color: var(--spice-card) !important; 
+}

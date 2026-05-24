@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nanozuki/tabby.nvim'
 Plug 'tiagovla/scope.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'rmagatti/auto-session'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
@@ -37,6 +38,7 @@ require('nvim_cmp_conf')
 require('lspsaga').setup()
 require('mason').setup()
 require("scope").setup({})
+require("auto-session").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"basedpyright",
@@ -110,7 +112,7 @@ nnoremap <leader>e :Yazi<Enter>
 nnoremap <leader>i :GuessIndent<Enter>
 nnoremap <leader>b :Telescope buffers<Enter>
 nnoremap <leader><F2> :Tabby rename_tab 
-nnoremap <leader>c :Tabby pick_window<Enter>
+nnoremap <leader>c :Tabby jump_to_tab<Enter>
 
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -125,8 +127,8 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " Terminal
-nnoremap <leader>t :botright new \| resize 10 \| terminal<CR>i
-tnoremap <Esc> <C-\><C-n>
+"nnoremap <leader>t :botright new \| resize 10 \| terminal<CR>i
+"tnoremap <Esc> <C-\><C-n>
 
 
 " Move tab
