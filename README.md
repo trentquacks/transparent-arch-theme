@@ -1,5 +1,5 @@
 # Preview
-![image]([./preview/preview1.png](https://github.com/trentquacks/transparent-arch-theme/blob/main/preview/preview1.png)
+![image](./preview/preview1.png)
 
 # What
 dotfiles that just makes everything transparent
