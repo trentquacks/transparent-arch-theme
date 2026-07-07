@@ -48,7 +48,7 @@ selected_wallpaper=${time_wallpaper[wallpaper_index]}
 awww img "$selected_wallpaper" --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 --transition-fps 80 
 
 # Update hyprlock
-conf="$HOME/dotfiles/.config/hypr/hyprlock.conf"
+conf="$HOME/.config/hypr/hyprlock.conf"
 sed -i "/^background {/,/^}/{s|^[[:space:]]*path =.*|    path = $selected_wallpaper|}" "$conf"
 
 # Get file depth for info.. (wehe)

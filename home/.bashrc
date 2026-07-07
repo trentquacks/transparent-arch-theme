@@ -45,3 +45,6 @@ echo -ne "$awake"
 echo -ne "\033[38;5;75m  ོ༘₊\033[0m" $daytoday
 echo
 echo
+
+export PATH=$PATH:/home/wuki/.spicetify
+export PATH=$PATH:~/.spicetify
