@@ -1,6 +1,6 @@
 [general]
 font-sans = "Inter 28pt"
-font-mono = "Inter 28pt"
+font-mono = "Adwaita Sans"
 
 [bar]
 scale = 0.8999999761581421
@@ -9,6 +9,9 @@ module-gap = 0.25
 button-variant = "basic"
 button-bg-opacity = 0
 button-icon-size = 0.8500000238418579
+dropdown-shadow = false
+dropdown-opacity = 90
+dropdown-freeze-label = false
 
 [[bar.layout]]
 monitor = "*"
@@ -17,22 +20,31 @@ left = [
     "dashboard",
     "hyprland-workspaces",
 ]
-center = ["clock"]
+center = [
+    "cava",
+    "clock",
+    "cava",
+]
 right = [
     "network",
     "microphone",
     "volume",
     "bluetooth",
-    "idle-inhibit",
+    "hyprsunset",
     "systray",
+    "idle-inhibit",
 ]
+
+[styling]
+scale = 1.0
+rounding = "md"
 
 [styling.palette]
 bg = "#00000080"
-surface = "#000000e6"
-elevated = "#14171bcc"
+surface = "#000000e5"
+elevated = "#19212ae6"
 fg = "#ffffff"
-fg-muted = "#576175"
+fg-muted = "#afb7c7"
 primary = "#5fafff"
 red = "#5fafff"
 yellow = "#5fafff"
@@ -40,8 +52,21 @@ green = "#5fafff"
 blue = "#5fafff"
 
 [modules.bluetooth]
+disabled-icon = "cm-bluetooth_disabled-symbolic"
+disconnected-icon = "cm-bluetooth_disabled-symbolic"
+connected-icon = "cm-bluetooth_connected-symbolic"
+searching-icon = "cm-bluetooth-symbolic"
 icon-color = "fg-default"
 label-color = "fg-default"
+
+[modules.cava]
+bars = 6
+monstercat = 0.2
+waves = 1
+direction = "mirror"
+color = "fg-default"
+bar-width = 2
+bar-gap = 5
 
 [modules.clock]
 icon-show = false
@@ -52,32 +77,53 @@ icon-override = "cm-moon-solid-full"
 icon-color = "#ffffff"
 right-click = "hyprpicker -a --no-fancy"
 scroll-up = "exec $HOME/bin/wallpaper-changer.sh 1"
-scroll-down = "exec $HOME/bin/wallpaper-changer.sh $RANDOM; notify-send a"
+scroll-down = "exec $HOME/bin/wallpaper-changer.sh -1"
+dropdown-poweroff-command = 'hyprshutdown --post-cmd "shutdown now"'
 
 [modules.hyprland-workspaces]
-min-workspace-count = 3
 display-mode = "none"
 app-icons-show = true
+icon-gap = 0.20000000298023224
 workspace-padding = 0.75
-icon-size = 0.800000011920929
+icon-size = 0.8500000238418579
+
+[modules.hyprsunset]
+temperature = 4000
+border-color = "fg-default"
+icon-color = "fg-default"
+icon-bg-color = "fg-default"
+label-show = false
+label-color = "fg-default"
 
 [modules.idle-inhibit]
 startup-duration = 0
+icon-inactive = "cm-eye-slash-solid-full-symbolic"
+icon-active = "cm-eye-solid-full-symbolic"
+icon-show = false
 icon-color = "fg-default"
+label-show = false
 label-color = "fg-default"
 
 [modules.microphone]
+icon-active = "cm-microphone-solid-full-symbolic"
+icon-muted = "cm-microphone-slash-solid-full-symbolic"
 icon-color = "fg-default"
 label-color = "fg-default"
 
 [modules.network]
-wired-connected-icon = "tbf-affiliate-symbolic"
+wired-connected-icon = "cm-ethernet-solid-full-symbolic"
 wired-acquiring-icon = "tb-affiliate-symbolic"
 wired-disconnected-icon = "tb-affiliate-symbolic"
-icon-color = "fg-default"
+icon-color = "#ffffff"
 label-color = "fg-default"
 
 [modules.volume]
+level-icons = [
+    "cm-volume-off-solid-full-symbolic",
+    "cm-volume-low-solid-full-symbolic",
+    "cm-volume-solid-full-symbolic",
+]
+icon-muted = "cm-volume-xmark-solid-full-symbolic"
 icon-color = "fg-default"
 label-color = "fg-default"
 
